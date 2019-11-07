@@ -13,19 +13,31 @@
           {{- range .Pages }}
           <ul>
             <li class="archives-item">
-              <a href="{{ .Permalink | relURL }}">{{ .Title }}</a>
-              <ul class="taxonomies">
-                {{- if isset .Params "categories" }}
-                {{- range .Params.categories }}
-                <li class="taxonomies-item"><a href="{{ "/" | relURL }}categories/{{ . | urlize }}/"><i class="fas fa-folder"></i>{{ . }}</a></li>
-                {{- end }}
-                {{- end }}
-                {{- if isset .Params "tags" }}
-                {{- range .Params.tags }}
-                <li class="taxonomies-item"><a href="{{ "/" | relURL }}tags/{{ . | urlize }}/"><i class="fas fa-tag"></i>{{ . }}</a></li>
-                {{- end }}
-                {{- end }}
-              </ul>
+              <div>
+                <a href="{{ .Permalink | relURL }}">{{ .Title }}</a>
+                <ul class="taxonomies">
+                  {{- if isset .Params "categories" }}
+                  {{- range .Params.categories }}
+                  <li class="taxonomies-item">
+                    <a href="{{ "/" | relURL }}categories/{{ . | urlize }}/">
+                      <i class="fas fa-folder"></i>
+                      {{ . }}
+                    </a>
+                  </li>
+                  {{- end }}
+                  {{- end }}
+                  {{- if isset .Params "tags" }}
+                  {{- range .Params.tags }}
+                  <li class="taxonomies-item">
+                    <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">
+                      <i class="fas fa-tag"></i>
+                      {{ . }}
+                    </a>
+                  </li>
+                  {{- end }}
+                  {{- end }}
+                </ul>
+              </div>
               <time>{{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time>
             </li>
           </ul>

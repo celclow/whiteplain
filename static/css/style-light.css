@@ -494,12 +494,12 @@ blockquote blockquote blockquote blockquote {
   flex-grow: 0;
   list-style-type: none;
   margin: 0;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 0px;
   display: -webkit-flex;
   display: flex;
 }
 .archives ul.taxonomies li {
-  padding: 0 0 0 8px;
+  padding: 0 8px 0 0px;
 }
 .archives ul.taxonomies li a {
   color: inherit;
