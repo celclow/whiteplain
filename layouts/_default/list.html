@@ -51,7 +51,9 @@
           {{ .Content }}
           {{- end }}
         </div>
+        {{- if .Truncated }}
         <div class="article-readmore"><a href="{{ .Permalink | relURL }}">Read more...</a></div>
+        {{- end }}
         <div class="article-floatclear"></div>
       </article>
       {{- end }}
