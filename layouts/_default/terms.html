@@ -15,7 +15,7 @@
             {{- else if eq $data.Plural "tags" }}
             <i class="fas fa-tag"></i>
             {{- end }}
-            {{ .Name | humanize }}({{ .Count }})
+            {{ .Page.Title }}({{ .Count }})
           </a>
           <time>{{((index .Pages.ByDate.Reverse 0).Date.Format (default "January 2, 2006" $.Site.Params.dateFormat))}}</time>
         </li>
