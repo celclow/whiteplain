@@ -1,0 +1,6 @@
+<figure>
+    <img style="width: 100%; height: 260px; object-fit: contain; background-color: #eee;" src="{{ printf "%s%s" $.Page.Permalink .Destination | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+    {{ with .Title }}
+    <figcaption style="font-weight: bold;">{{ . }}</figcaption>
+    {{ end -}}
+</figure>
